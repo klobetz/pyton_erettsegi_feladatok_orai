@@ -16,7 +16,26 @@ with open("TXT_allomanyok/autok.txt", encoding="utf8") as f:
 
 for elem in autoklista:
     if elem[5] == 0:
-        nap = elem[0]
-        rendszam = elem[2]
+        nap1 = elem[0]
+        rendszam1 = elem[2]
 
-print(f"2. feladat\n{nap} nap rendszám: {rendszam} ")
+print(f"2. feladat\n{nap1} nap rendszám: {rendszam1} ")
+
+#3. Kérjen be egy napot és írja ki a képernyőre a minta szerint, hogy mely autókat
+# vitték ki és hozták vissza az adott napon!
+
+print("3. feladat")
+#bekertnap = int(input("Nap: "))
+bekertnap = 4
+for elem in autoklista:
+    if elem[5] == 0:
+        ki = "ki"
+    else:
+        be = "be"
+
+    if elem[0] == bekertnap:
+        if elem[5] == 0:
+            print(elem[1], elem[2],elem[3], ki)
+        else:
+            print(elem[1], elem[2],elem[3], be)
+
