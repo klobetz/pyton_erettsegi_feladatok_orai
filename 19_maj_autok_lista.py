@@ -50,3 +50,23 @@ for elem in autoklista:
         behajtas +=1
 visszanemhozottautok = kihajtas-behajtas
 print(f"A hónap végén {visszanemhozottautok} autót nem hoztak vissza.")
+
+print("5.feladat:")
+renedszamoklista = []
+for elem in autoklista:
+    if elem[2] not in renedszamoklista:
+        renedszamoklista.append(elem[2])
+renedszamoklista = sorted(renedszamoklista)
+#print(renedszamoklista)
+
+for adatrendszam in renedszamoklista:
+    megtettkmek =[]
+    for elem in autoklista:
+        if adatrendszam == elem[2]:
+            megtettkmek.append(elem[4])
+    #print(adatrendszam,megtettkmek)
+    kezdokm = megtettkmek[0]
+    utolsokm = megtettkmek[-1]
+    megtettkm = utolsokm-kezdokm
+    print(f"{adatrendszam} {megtettkm} km")
+
