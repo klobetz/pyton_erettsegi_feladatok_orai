@@ -39,3 +39,14 @@ for elem in autoklista:
         else:
             print(f"{elem[1]} {elem[2]} {elem[3]} be")
 
+#4. Adja meg, hogy hány autó nem volt bent a hónap végén a parkolóban!
+print("4.feladat")
+kihajtas = 0
+behajtas = 0
+for elem in autoklista:
+    if elem[5] == 0:
+        kihajtas += 1
+    else:
+        behajtas +=1
+visszanemhozottautok = kihajtas-behajtas
+print(f"A hónap végén {visszanemhozottautok} autót nem hoztak vissza.")
