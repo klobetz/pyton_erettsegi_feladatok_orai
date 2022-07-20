@@ -28,14 +28,14 @@ print("3. feladat")
 #bekertnap = int(input("Nap: "))
 bekertnap = 4
 for elem in autoklista:
-    if elem[5] == 0:
-        ki = "ki"
-    else:
-        be = "be"
+    # if elem[5] == 0:      #ez felesleges f.stringgel megoldható
+    #     ki = "ki"
+    # else:
+    #     be = "be"
 
     if elem[0] == bekertnap:
         if elem[5] == 0:
-            print(elem[1], elem[2],elem[3], ki)
+            print(f"{elem[1]} {elem[2]} {elem[3]} ki")
         else:
-            print(elem[1], elem[2],elem[3], be)
+            print(f"{elem[1]} {elem[2]} {elem[3]} be")
 
