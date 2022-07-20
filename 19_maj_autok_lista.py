@@ -70,3 +70,19 @@ for adatrendszam in renedszamoklista:
     megtettkm = utolsokm-kezdokm
     print(f"{adatrendszam} {megtettkm} km")
 
+print("6. feladat")
+leghosszabbut = 0
+for adatrendszam in renedszamoklista:
+    for elem in autoklista:
+        if adatrendszam == elem[2]:
+            if elem[5] == 0:
+                kezdokmallas = elem[4]
+            if elem[5] == 1:
+                visszahozottkmallas = elem[4]
+                uthossza = visszahozottkmallas - kezdokmallas
+                #print(adatrendszam,uthossza)
+                if leghosszabbut < uthossza:
+                    leghosszabbut = uthossza
+                    dolgozoazonosito = elem[3]
+
+print(f"út: {leghosszabbut} km, személy: {dolgozoazonosito}")
