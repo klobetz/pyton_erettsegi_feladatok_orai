@@ -1,3 +1,5 @@
+from datetime import datetime
+
 fogadooralista = []
 
 with open("TXT_allomanyok/fogado.txt", encoding="utf8") as f:
@@ -46,3 +48,18 @@ for elem in tanaroklista:
 with open(f"Kiiratasok/{valaszido.replace(':','')}.txt", "w" , encoding="utf8") as f:
     for elem in tanaroklista:
         f.write(f"{elem}\n")
+
+#5. feladat:
+legkisebbdatum = datetime.max
+print(legkisebbdatum)
+for tanar,foglaltido,foglalasdatuma in fogadooralista:
+    idopont = datetime.strptime(foglalasdatuma, "%Y.%m.%d-%H:%M")
+    #print(idopont)
+    if idopont < legkisebbdatum:
+        legkisebbdatum = idopont
+        adaotttanar = tanar
+        adottidopont = foglaltido
+
+
+print(legkisebbdatum)
+print(f"{legkisebbdatum:%Y.%m.%d-%H:%M} {adaotttanar} {adottidopont}")
