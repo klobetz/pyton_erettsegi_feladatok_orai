@@ -8,6 +8,11 @@ with open("TXT_allomanyok/fogado.txt", encoding="utf8") as f:
         foglalasdatuma = sor[3]
         fogadooralista.append([tanar,foglaltido,foglalasdatuma])
 
-for tanar,foglaltido,foglalasdatuma in fogadooralista:
-    print(foglaltido)
+# for tanar,foglaltido,foglalasdatuma in fogadooralista:
+#     print(foglaltido)
+
+#2. feladat:
+print(f"2. feladat\nFoglalások száma: {len(fogadooralista)}")
+
+#3. feladat:
 
