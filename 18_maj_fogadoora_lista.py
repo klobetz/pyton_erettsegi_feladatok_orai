@@ -28,5 +28,21 @@ if db > 0 :
 else:
     print("A megadott néven nincs időpontfoglalás.")
 
+#4. feldat:
+#valaszido = input("4. feladat\nAdjon meg egy érvényes időpontot (pl. 17:10): ")
+valaszido ="17:40"
+tanaroklista = []
+for tanar,foglaltido,foglalasdatuma in fogadooralista:
+    if foglaltido == valaszido:
+        tanaroklista.append(tanar)
 
+tanaroklista = sorted(tanaroklista)
+#tanaroklista.sort(reverse=True) #fordított sorrend
+#tanaroklista.sort()
+#fajlnev = valaszido[:2]+valaszido[3:]+".txt"
 
+for elem in tanaroklista:
+    print(elem)
+with open(f"Kiiratasok/{valaszido.replace(':','')}.txt", "w" , encoding="utf8") as f:
+    for elem in tanaroklista:
+        f.write(f"{elem}\n")
