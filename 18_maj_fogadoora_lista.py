@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 fogadooralista = []
 
@@ -63,3 +63,18 @@ for tanar,foglaltido,foglalasdatuma in fogadooralista:
 
 #print(legkisebbdatum)
 print(f"\n5. feladat:\nTanár neve: {adaotttanar}\nFoglalt időpont: {adottidopont}\nFoglalás ideje: {legkisebbdatum:%Y.%m.%d-%H:%M}")
+
+
+print("-"*50)
+#6.feladat:
+#kiválogatom a foglalt időpontokat
+idopontoklista = []
+for tanar,foglaltido,foglalasdatuma in fogadooralista:
+    if tanar == "Barna Eszter":
+        idopontoklista.append(foglaltido)
+
+idopontoklista = sorted(idopontoklista)
+#print(idopontoklista[-1])
+hazamehet = datetime.strptime(idopontoklista[-1],"%H:%M")
+#print(hazamehet)
+print(f"Barna Eszter legkorábban távozhat: {hazamehet + timedelta(minutes=10):%H:%M}")
