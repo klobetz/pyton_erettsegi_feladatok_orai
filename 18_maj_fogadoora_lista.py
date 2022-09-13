@@ -51,7 +51,7 @@ with open(f"Kiiratasok/{valaszido.replace(':','')}.txt", "w" , encoding="utf8") 
 
 #5. feladat:
 legkisebbdatum = datetime.max
-print(legkisebbdatum)
+#print(legkisebbdatum)
 for tanar,foglaltido,foglalasdatuma in fogadooralista:
     idopont = datetime.strptime(foglalasdatuma, "%Y.%m.%d-%H:%M")
     #print(idopont)
@@ -61,5 +61,5 @@ for tanar,foglaltido,foglalasdatuma in fogadooralista:
         adottidopont = foglaltido
 
 
-print(legkisebbdatum)
-print(f"{legkisebbdatum:%Y.%m.%d-%H:%M} {adaotttanar} {adottidopont}")
+#print(legkisebbdatum)
+print(f"\n5. feladat:\nTanár neve: {adaotttanar}\nFoglalt időpont: {adottidopont}\nFoglalás ideje: {legkisebbdatum:%Y.%m.%d-%H:%M}")
