@@ -68,13 +68,32 @@ print(f"\n5. feladat:\nTanár neve: {adaotttanar}\nFoglalt időpont: {adottidopo
 print("-"*50)
 #6.feladat:
 #kiválogatom a foglalt időpontokat
-idopontoklista = []
+foglaltidopontoklista = []
 for tanar,foglaltido,foglalasdatuma in fogadooralista:
     if tanar == "Barna Eszter":
-        idopontoklista.append(foglaltido)
+        foglaltidopontoklista.append(foglaltido)
 
-idopontoklista = sorted(idopontoklista)
+foglaltidopontoklista = sorted(foglaltidopontoklista)
 #print(idopontoklista[-1])
-hazamehet = datetime.strptime(idopontoklista[-1],"%H:%M")
+hazamehet = datetime.strptime(foglaltidopontoklista[-1], "%H:%M")
 #print(hazamehet)
 print(f"Barna Eszter legkorábban távozhat: {hazamehet + timedelta(minutes=10):%H:%M}")
+
+idopontoklista = []
+for tanar,foglaltido,foglalasdatuma in fogadooralista:
+    if foglaltido not in idopontoklista:
+        idopontoklista.append(foglaltido)
+
+#print(sorted(idopontoklista))
+idopontoklista = sorted(idopontoklista)
+
+for idok in foglaltidopontoklista:
+    for elem in idopontoklista:
+        if idok == elem:
+            idopontoklista.remove(elem)
+
+for elem in idopontoklista:
+    print(elem)
+
+
+
