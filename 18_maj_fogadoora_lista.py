@@ -95,5 +95,5 @@ for idok in foglaltidopontoklista:
 for elem in idopontoklista:
     print(elem)
 
-
+#HF: remove nélkül külön listába gyűjteni a lehetséges időpontokat
 
